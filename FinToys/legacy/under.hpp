@@ -1,6 +1,5 @@
+#pragma once
 #include "header.h"
-#include <iostream>
-#include <vector>
 
 class Underlying {
 public:
@@ -27,14 +26,4 @@ public:
       : Underlying{_volatility, _S0, _q} {};
   std::vector<double> __s();
   std::vector<double> __xs();
-};
-
-inline std::vector<double> Stock::__s() {
-  std::vector<double> vec;
-  int n = 1001 / this->_S0;
-  for (int i = 0; i < 1001; i++) {
-    vec.push_back(2 * this->_S0);
-  };
-
-  return vec;
 };
